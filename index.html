@@ -21,15 +21,6 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script>
-		if("serviceWorker" in navigator){
-			navigator.serviceWorker.register("/pwa1/pwabuilder-sw.js")
-			.then(function(registration){
-				// console.log("Service Worker Success", registration);
-			})
-			.catch(function(error){
-				// console.error("Service Worker Fail", error);
-			});
-		}
 		const interaction = {
 			init: function () {
 				this.menu();
@@ -129,6 +120,17 @@
 		window.addEventListener("load", function() {
 			interaction.init();
 		});
+	</script>
+	<script type="module">
+		if("serviceWorker" in navigator){
+			navigator.serviceWorker.register("/pwa1/pwabuilder-sw.js")
+			.then(function(registration){
+				// console.log("Service Worker Success", registration);
+			})
+			.catch(function(error){
+				// console.error("Service Worker Fail", error);
+			});
+		}
 	</script>
 </head>
 
